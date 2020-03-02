@@ -1,0 +1,22 @@
+{{#if notFirstPage }}
+<a
+  style="text-decoration: none"
+  href="/search?page={{ previousPage }}&queryString={{ query }}"
+>
+  <button
+    class="o-buttons o-buttons--secondary o-buttons-icon o-buttons-icon--arrow-left"
+  >
+    Previous
+  </button>
+</a>
+{{/if}}
+<a
+  style="text-decoration: none"
+  href="/search?page={{ nextPage }}&queryString={{ query }}"
+>
+  <button
+    class="o-buttons o-buttons--secondary o-buttons-icon o-buttons-icon--arrow-right"
+  >
+    Next
+  </button>
+</a>

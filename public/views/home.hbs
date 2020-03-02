@@ -1,0 +1,51 @@
+{{#if content }}
+<div class="o-grid-row">
+  <div data-o-grid-colspan="12">
+    <h2 style="text-align:center">Results</h2>
+  </div>
+</div>
+
+<div class="o-grid-container">
+  {{> hompageNavigation}}
+
+  <div class="o-grid-row" data-o-grid-colspan="center 10">
+    {{#each content}}
+
+    <div class="o-teaser o-teaser--large" data-o-component="o-teaser">
+      <div class="o-teaser__content">
+        <div class="o-teaser__meta">
+          <a href="{{ this.url }}" class="o-teaser__tag">{{ this.author }}</a>
+        </div>
+
+        <h2 class="o-teaser__heading">{{ this.title }}</h2>
+
+        <p class="o-teaser__standfirst">
+          <a href="{{ this.url }}" target="_blank">
+            {{ this.description }}
+          </a>
+        </p>
+
+        <div class="o-teaser__timestamp ">
+          <time
+            data-o-component="o-date"
+            class="o-date o-teaser__timestamp"
+            datetime="{{ this.publishedAt }}"
+            >{{ this.publishedAt }}</time
+          >
+        </div>
+      </div>
+    </div>
+
+    {{/each}}
+  </div>
+  {{> hompageNavigation}}
+  {{else}}
+  <div class="o-grid-row" data-o-grid-colspan="center 8">
+    <div class="o-grid-row">
+      <div data-o-grid-colspan="12">
+        <h1 style="text-align:center">No Results</h1>
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</div>

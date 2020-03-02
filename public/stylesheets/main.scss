@@ -1,0 +1,22 @@
+@import "@financial-times/o-grid/main.scss";
+@import "@financial-times/o-typography/main.scss";
+@import "@financial-times/o-colors/main.scss";
+@import "@financial-times/o-table/main.scss";
+
+// include all o-grid css
+@include oGrid();
+// include all o-typography css
+@include oTypography();
+// include only the o-table features we need
+@include oTable(
+  $opts: (
+    "stripes"
+  )
+);
+// use o-color Sass functions
+body {
+  background-color: oColorsByUsecase("page", "background");
+}
+
+@media screen and (min-width: 800px) {
+}
